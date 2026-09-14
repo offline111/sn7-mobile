@@ -42,7 +42,16 @@ jobs:
           sed -i 's|<application |<application android:networkSecurityConfig="@xml/network_security_config" |' \
             android/app/src/main/AndroidManifest.xml
           npx cap sync android
+          cat >> android/app/build.gradle << 'EOF'
 
+          configurations.all {
+              resolutionStrategy {
+                  force "org.jetbrains.kotlin:kotlin-stdlib:1.9.24"
+                  force "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.24"
+                  force "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.24"
+              }
+          }
+          EOF
       - name: Gradle
         working-directory: frontend/android
         run: |
