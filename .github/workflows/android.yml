@@ -33,7 +33,7 @@ jobs:
       - name: Оболочка Capacitor
         working-directory: frontend
         run: |
-          cp ../android/capacitor.config.json
+          cp ../android/capacitor.config.json ./capacitor.config.json
           npm install @capacitor/core @capacitor/cli @capacitor/android
           npx cap add android || npx cap sync android
           # разрешаем открытый HTTP только для адреса CRM
