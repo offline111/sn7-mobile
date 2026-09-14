@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 9 и новее по умолчанию запрещает открытый HTTP. CRM пока работает
+  без сертификата, поэтому разрешаем только её адрес. Когда появится домен
+  и HTTPS, этот файл нужно удалить, а в манифесте убрать ссылку на него.
+-->
+<network-security-config>
+  <domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains="false">63.250.57.80</domain>
+  </domain-config>
+  <base-config cleartextTrafficPermitted="false" />
+</network-security-config>

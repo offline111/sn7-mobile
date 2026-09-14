@@ -1,0 +1,13 @@
+{
+  "appId": "rs.sn7.crm",
+  "appName": "SN7 CRM",
+  "webDir": "dist",
+  "server": {
+    "url": "http://63.250.57.80",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true,
+    "backgroundColor": "#2f2f2f"
+  }
+}
